@@ -22,7 +22,7 @@ const props = defineProps({
         :title="item.meta.title"
       />
       <el-menu-item v-else :index="item.meta.fullPath">
-        {{ item.meta.fullPath }}
+        {{ item.meta.title }}
       </el-menu-item>
     </template>
   </el-sub-menu>

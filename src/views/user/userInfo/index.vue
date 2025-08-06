@@ -1,5 +1,18 @@
-<script setup lang="ts"></script>
+<script setup>
+import { ref } from 'vue'
 
-<template>bro</template>
+const dialog = ref(false)
+</script>
 
-<style scoped></style>
+<template>
+  <el-button type="primary" @click="dialog=true">dialog</el-button>
+  <el-dialog v-model="dialog" title="穿梭框" :show-close="false">
+    <template #header></template>
+  </el-dialog>
+</template>
+
+<style scoped lang="scss">
+:deep(.el-dialog){
+  padding: 0;
+}
+</style>

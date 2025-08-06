@@ -17,6 +17,7 @@ const getSubMenu = computed(() => {
 })
 // 切换一级菜单
 const changeSubMenu = (key) => {
+  console.log(key)
   activeToMenu.value = key
 }
 </script>
@@ -29,11 +30,11 @@ const changeSubMenu = (key) => {
       <div class="header-left">logo</div>
       <!-- 子菜单 -->
       <el-menu :default-active="activeToMenu" router class="el-menu" :unique-opened="true" mode="vertical">
-        <template v-for="item in getSubMenu" :key="item.meta.fullPath">
+        <template v-for="(item,index) in getSubMenu" :key="index">
           <sub-menu v-if="item.children && item.children.length > 0" :menu="item.children"
-            :title="item.meta.fullPath" />
+            :title="item.meta.title" />
           <el-menu-item v-else :index="item.meta.fullPath">
-            {{ item.meta.fullPath }}
+            {{ item.meta.title }}
           </el-menu-item>
         </template>
       </el-menu>
@@ -44,7 +45,7 @@ const changeSubMenu = (key) => {
         <div class="header-right">
           <el-menu mode="horizontal" :default-active="activeToMenu" @select="changeSubMenu">
             <el-menu-item v-for="menu in menuStore.menuList" :key="menu.meta.fullPath" :index="menu.meta.fullPath">
-              {{ menu.meta.fullPath }}
+              {{ menu.meta.title }}
             </el-menu-item>
           </el-menu>
         </div>
