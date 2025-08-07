@@ -12,7 +12,7 @@ const dialog = ref(false)
 </template>
 
 <style scoped lang="scss">
-:deep(.el-dialog){
-  padding: 0;
+:deep(.el-dialog) {
+  padding: 100px;
 }
 </style>

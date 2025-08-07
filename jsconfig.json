@@ -2,7 +2,10 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "target": "ESNext",
+    "lib": ["ESNext","dom"],
+    "moduleResolution": "node"
   },
   "exclude": ["node_modules", "dist"]
 }

@@ -1,49 +1,23 @@
-<template>222222222222222222222</template>
+<template>
+  <div class="content" @click="handleClick($event,11)"></div>
+</template>
 
-<script lang="ts" setup>
-const defaultProps = {
-  children: 'children',
-  label: 'label',
-  disabled: 'disabled',
+<script lang="js" setup>
+const handleClick = (e,number) => {
+  console.log(e)
+  console.log(e.target.className)
 }
-
-const data = [
-  {
-    id: 1,
-    label: 'Level one 1',
-    children: [
-      {
-        id: 3,
-        label: 'Level two 2-1',
-        children: [
-          {
-            id: 4,
-            label: 'Level three 3-1-1',
-          },
-          {
-            id: 5,
-            label: 'Level three 3-1-2',
-            disabled: true,
-          },
-        ],
-      },
-      {
-        id: 2,
-        label: 'Level two 2-2',
-        disabled: true,
-        children: [
-          {
-            id: 6,
-            label: 'Level three 3-2-1',
-          },
-          {
-            id: 7,
-            label: 'Level three 3-2-2',
-            disabled: true,
-          },
-        ],
-      },
-    ],
-  },
-]
 </script>
+
+<style scoped lang="scss">
+
+.content {
+  width: 0;
+  height: 0;
+  border: 100px solid transparent;
+  border-top: 100px solid red;
+  //border-right: 100px solid green;
+  //border-bottom: 100px solid blue;
+  //border-left: 100px solid yellow;
+}
+</style>
